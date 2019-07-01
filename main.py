@@ -8,7 +8,7 @@ app = Flask(__name__)
 def login():
     name = request.form.get("user-name")
     email = request.form.get("user-email")
-    return render_template("/login")
+    return render_template("login.html")
 
 # definimos una ruta de tipo GET y definimos que compruebe si hay un secret number, si no lo hay crea una cookie con el
 @app.route("/", methods=["GET"])
@@ -24,7 +24,7 @@ def index():
 # finalmente hace return con la respuesta
 
 # En este cuadro, definimos una ruta de tipo POST en la que el programa comprueba si el numero del jugador es igual a la cookie
-@app.route("/result", methods=["POST"])
+@app.route("/login", methods=["POST"])
 def result():
     guess = int(request.form.get("guess"))
     secret_number = int(request.cookies.get("secret_number"))

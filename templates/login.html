@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Secret Number Game</title>
+    <title>Simple database example</title>
 </head>
 <body>
 
-    <h1>Secret Number Game</h1>
+    <h1>Enter the Guess Number</h1>
 
     {% if user %}
         <p>Hello {{user.name}}</p>
@@ -15,8 +15,8 @@
         <a href="/logout" title="Logout">Logout</a>
     {% else %}
         <form method="post" action="/login">
-            <input type="text" name="user-name" placeholder="Enter your name"><br>
-            <input type="email" name="user-email" placeholder="Enter your email address"><br>
+           <input type="numero secreto" name="secret-number" placeholder="Enter your guess number"><br>
+
             <button>Submit</button>
         </form>
     {% endif %}
